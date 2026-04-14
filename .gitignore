@@ -1,0 +1,4 @@
+*.zip
+_extracted/
+.DS_Store
+.cursor/
