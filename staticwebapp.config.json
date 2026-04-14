@@ -1,17 +1,9 @@
 {
+  "routes": [],
   "globalHeaders": {
     "**/*": {
       "X-Content-Type-Options": "nosniff",
       "Referrer-Policy": "strict-origin-when-cross-origin"
-    },
-    "**/*.jpg": {
-      "cache-control": "public, max-age=604800, immutable"
-    },
-    "**/*.png": {
-      "cache-control": "public, max-age=604800, immutable"
-    },
-    "**/*.mp4": {
-      "cache-control": "public, max-age=604800, immutable"
     }
   },
   "mimeTypes": {
