@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Successo — Constructora en Colombia. Obras residenciales con estándar de calidad. Proyecto Minuto de Dios y unidades dúplex."
+      content="Successo — Constructora en Colombia. Recorrido virtual, renders y unidades dúplex del proyecto Minuto de Dios. Obras residenciales con estándar de calidad."
     />
     <title>Successo | Constructora</title>
     <link rel="canonical" href="https://www.successo.com.co/" />
@@ -44,6 +44,7 @@
           <ul class="nav-list">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#recorrido-virtual">Recorrido virtual</a></li>
             <li><a href="#proyectos">Proyectos</a></li>
             <li><a href="#videos">Videos</a></li>
             <li><a href="#contacto">Contacto</a></li>
@@ -71,7 +72,8 @@
             perduran en Bogotá y alrededores.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#proyectos">Ver obra en curso</a>
+            <a class="btn btn-primary" href="#recorrido-virtual">Ver recorrido virtual</a>
+            <a class="btn btn-ghost" href="#proyectos">Ver obra en curso</a>
             <a class="btn btn-ghost" href="#contacto">Hablemos de su proyecto</a>
           </div>
         </div>
@@ -125,6 +127,72 @@
         </div>
       </section>
 
+      <section id="recorrido-virtual" class="section showcase reveal" aria-labelledby="recorrido-title">
+        <header class="section-header">
+          <p class="section-label">Experiencia inmersiva</p>
+          <h2 id="recorrido-title">Recorrido virtual y renders</h2>
+          <p class="section-intro">
+            Explore el conjunto Minuto de Dios antes de visitarlo: recorridos en video, renders de
+            interiores y cada unidad dúplex con su propio recorrido.
+          </p>
+        </header>
+
+        <div class="showcase-hero">
+          <img
+            class="showcase-hero__img"
+            src="/assets/projects/minuto-de-dios/renders/duplex/duplex-305.jpg"
+            alt="Render dúplex 305 — Minuto de Dios"
+            width="1920"
+            height="1080"
+            loading="lazy"
+          />
+          <div class="showcase-hero__overlay">
+            <p class="showcase-hero__eyebrow">Proyecto Minuto de Dios</p>
+            <p class="showcase-hero__tagline">Viva el espacio antes de llegar</p>
+          </div>
+        </div>
+
+        <div class="showcase-tabs" role="tablist" aria-label="Explorar recorrido virtual">
+          <button type="button" role="tab" id="tab-recorridos" aria-selected="true" aria-controls="panel-recorridos">
+            Recorridos
+          </button>
+          <button type="button" role="tab" id="tab-duplex" aria-selected="false" aria-controls="panel-duplex" tabindex="-1">
+            Dúplex
+          </button>
+          <button type="button" role="tab" id="tab-primer-piso" aria-selected="false" aria-controls="panel-primer-piso" tabindex="-1">
+            Primer piso
+          </button>
+          <button type="button" role="tab" id="tab-segundo-piso" aria-selected="false" aria-controls="panel-segundo-piso" tabindex="-1">
+            Segundo piso
+          </button>
+        </div>
+
+        <div id="panel-recorridos" class="showcase-panel is-active" role="tabpanel" aria-labelledby="tab-recorridos">
+          <div id="tour-recorridos" class="tour-grid"></div>
+        </div>
+
+        <div id="panel-duplex" class="showcase-panel" role="tabpanel" aria-labelledby="tab-duplex" hidden>
+          <div class="unit-pills" role="group" aria-label="Seleccionar unidad dúplex">
+            <button type="button" class="unit-pill is-active" data-unit="301">301</button>
+            <button type="button" class="unit-pill" data-unit="302">302</button>
+            <button type="button" class="unit-pill" data-unit="303">303</button>
+            <button type="button" class="unit-pill" data-unit="304">304</button>
+            <button type="button" class="unit-pill" data-unit="305">305</button>
+          </div>
+          <div id="duplex-video" class="duplex-video-wrap"></div>
+          <div id="gallery-duplex-renders" class="gallery gallery--renders" role="list" aria-label="Renders dúplex"></div>
+        </div>
+
+        <div id="panel-primer-piso" class="showcase-panel" role="tabpanel" aria-labelledby="tab-primer-piso" hidden>
+          <div id="gallery-primer-piso" class="gallery gallery--renders" role="list" aria-label="Renders primer piso"></div>
+          <div id="tour-primer-piso" class="tour-grid tour-grid--compact"></div>
+        </div>
+
+        <div id="panel-segundo-piso" class="showcase-panel" role="tabpanel" aria-labelledby="tab-segundo-piso" hidden>
+          <div id="gallery-segundo-piso" class="gallery gallery--renders" role="list" aria-label="Renders segundo piso"></div>
+        </div>
+      </section>
+
       <section id="proyectos" class="section reveal" aria-labelledby="proyectos-title">
         <header class="section-header">
           <p class="section-label">Portafolio</p>
@@ -157,7 +225,8 @@
 
         <h3 class="subsection-title">Unidades dúplex</h3>
         <p class="section-intro" style="margin-bottom: 1rem">
-          Detalle de volumetría, cubiertas y fachadas de las unidades dúplex del proyecto.
+          Fotos reales de volumetría y fachadas en obra. Para renders y recorridos por unidad, vea la
+          <a href="#recorrido-virtual">sección Recorrido virtual</a>.
         </p>
         <div
           id="gallery-duplex"
@@ -255,6 +324,8 @@
       aria-label="Vista ampliada"
     >
       <button type="button" class="lightbox-close" aria-label="Cerrar">&times;</button>
+      <button type="button" class="lightbox-nav lightbox-prev" aria-label="Imagen anterior">&#8249;</button>
+      <button type="button" class="lightbox-nav lightbox-next" aria-label="Imagen siguiente">&#8250;</button>
       <img id="lightbox-img" src="" alt="" />
     </div>
 

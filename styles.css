@@ -471,6 +471,194 @@ a:hover {
   color: var(--text);
 }
 
+/* Showcase — recorrido virtual */
+.showcase {
+  padding-top: 3rem;
+}
+
+.showcase-hero {
+  position: relative;
+  border-radius: calc(var(--radius) + 4px);
+  overflow: hidden;
+  margin-bottom: 2rem;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  aspect-ratio: 21/9;
+  min-height: 220px;
+}
+
+.showcase-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.showcase-hero__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+  background: linear-gradient(
+    180deg,
+    transparent 30%,
+    rgba(15, 17, 20, 0.85) 100%
+  );
+}
+
+.showcase-hero__eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.35rem;
+}
+
+.showcase-hero__tagline {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 700;
+  margin: 0;
+  max-width: 28ch;
+}
+
+.showcase-tabs {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.75rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.showcase-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.showcase-tabs [role="tab"] {
+  flex-shrink: 0;
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.6rem 1.15rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.showcase-tabs [role="tab"]:hover {
+  color: var(--text);
+  border-color: rgba(193, 127, 58, 0.4);
+}
+
+.showcase-tabs [role="tab"][aria-selected="true"] {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.showcase-tabs [role="tab"]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.showcase-panel {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.showcase-panel.is-active {
+  opacity: 1;
+}
+
+.showcase-panel[hidden] {
+  display: none;
+}
+
+.unit-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.unit-pill {
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.55rem 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.unit-pill:hover {
+  color: var(--text);
+}
+
+.unit-pill.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #1a1208;
+}
+
+.unit-pill:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.duplex-video-wrap {
+  margin-bottom: 1.5rem;
+}
+
+.duplex-video-wrap .video-card {
+  max-width: 900px;
+}
+
+.tour-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .tour-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.tour-grid--compact {
+  margin-top: 1.5rem;
+}
+
+.gallery--renders {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.85rem;
+}
+
+.gallery--renders button {
+  aspect-ratio: 4/3;
+  border-radius: var(--radius);
+}
+
+.gallery--renders button.render-featured {
+  grid-column: 1 / -1;
+  aspect-ratio: 16/9;
+  max-height: 420px;
+}
+
+.gallery--renders button.render-featured img {
+  object-fit: cover;
+}
+
 .videos-grid {
   display: grid;
   gap: 1.5rem;
@@ -614,6 +802,37 @@ a:hover {
 .lightbox-close:hover {
   background: var(--accent);
   color: #1a1208;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--text);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s;
+}
+
+.lightbox-nav:hover {
+  background: var(--accent);
+  color: #1a1208;
+}
+
+.lightbox-prev {
+  left: 1rem;
+}
+
+.lightbox-next {
+  right: 1rem;
 }
 
 @media (max-width: 768px) {
