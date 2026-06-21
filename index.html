@@ -56,13 +56,19 @@
     <main id="contenido">
       <section id="inicio" class="hero" aria-label="Inicio">
         <div class="hero-bg">
-          <img
-            src="/assets/projects/minuto-de-dios/images/IMG-20250224-WA0005.jpg"
-            alt=""
-            width="1920"
-            height="1080"
-            fetchpriority="high"
-          />
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="/assets/projects/minuto-de-dios/renders/duplex/duplex-305.jpg"
+            />
+            <img
+              src="/assets/projects/minuto-de-dios/images/IMG-20250224-WA0005.jpg"
+              alt=""
+              width="1920"
+              height="1080"
+              fetchpriority="high"
+            />
+          </picture>
         </div>
         <div class="hero-content">
           <p class="hero-eyebrow">Construcción residencial</p>
@@ -249,34 +255,31 @@
           <figure class="video-card">
             <video
               controls
-              preload="metadata"
+              preload="none"
               poster="/assets/projects/minuto-de-dios/images/IMG-20250224-WA0028.jpg"
               aria-label="Video de avance de obra 1"
-            >
-              <source src="/assets/projects/minuto-de-dios/videos/VID-20250224-WA0015.mp4" type="video/mp4" />
-            </video>
+              data-src="/assets/projects/minuto-de-dios/videos/VID-20250224-WA0015.mp4"
+            ></video>
             <figcaption>Avance en sitio — febrero 2025</figcaption>
           </figure>
           <figure class="video-card">
             <video
               controls
-              preload="metadata"
+              preload="none"
               poster="/assets/projects/minuto-de-dios/images/IMG-20250224-WA0020.jpg"
               aria-label="Video de avance de obra 2"
-            >
-              <source src="/assets/projects/minuto-de-dios/videos/VID-20250219-WA0018.mp4" type="video/mp4" />
-            </video>
+              data-src="/assets/projects/minuto-de-dios/videos/VID-20250219-WA0018.mp4"
+            ></video>
             <figcaption>Estructura y muros</figcaption>
           </figure>
           <figure class="video-card">
             <video
               controls
-              preload="metadata"
+              preload="none"
               poster="/assets/projects/minuto-de-dios/images/IMG-20250224-WA0031.jpg"
               aria-label="Video de avance de obra 3"
-            >
-              <source src="/assets/projects/minuto-de-dios/videos/VID-20250224-WA0029.mp4" type="video/mp4" />
-            </video>
+              data-src="/assets/projects/minuto-de-dios/videos/VID-20250224-WA0029.mp4"
+            ></video>
             <figcaption>Detalle de obra</figcaption>
           </figure>
         </div>

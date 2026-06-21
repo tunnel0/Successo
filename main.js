@@ -146,18 +146,53 @@
     });
   }
 
+  function bindLazyVideo(video) {
+    if (!video || video._lazyBound) return;
+    video._lazyBound = true;
+    video.preload = "none";
+
+    function ensureSource(done) {
+      if (video.querySelector("source")) {
+        if (done) done();
+        return;
+      }
+      var src = video.getAttribute("data-src");
+      if (!src) return;
+      var source = document.createElement("source");
+      source.src = src;
+      source.type = "video/mp4";
+      video.appendChild(source);
+      if (done) {
+        video.addEventListener("loadeddata", done, { once: true });
+      }
+      video.load();
+    }
+
+    video.addEventListener("play", function () {
+      if (!video.querySelector("source")) {
+        video.pause();
+        ensureSource(function () {
+          video.play().catch(function () {});
+        });
+      }
+    });
+  }
+
+  function initLazyVideos() {
+    document.querySelectorAll("video[data-src]").forEach(bindLazyVideo);
+  }
+
   function createVideoCard(title, src, poster) {
     var figure = document.createElement("figure");
     figure.className = "video-card";
     var video = document.createElement("video");
     video.controls = true;
-    video.preload = "metadata";
+    video.preload = "none";
     video.setAttribute("aria-label", title);
+    video.setAttribute("data-src", src);
     if (poster) video.poster = poster;
-    var source = document.createElement("source");
-    source.src = src;
-    source.type = "video/mp4";
-    video.appendChild(source);
+    bindLazyVideo(video);
+
     var caption = document.createElement("figcaption");
     caption.textContent = title;
     figure.appendChild(video);
@@ -399,6 +434,7 @@
 
   initUnitFilter();
   bindLightboxButtons();
+  initLazyVideos();
 
   function onScroll() {
     if (!header) return;
