@@ -854,8 +854,13 @@ a:hover {
   }
 
   .hero {
-    min-height: 100svh;
-    padding: 5.5rem 1rem 2.5rem;
+    min-height: auto;
+    align-items: start;
+    padding: 5rem 1rem 2rem;
+  }
+
+  .hero-bg img {
+    object-position: center 25%;
   }
 
   .hero h1 {
