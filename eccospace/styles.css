@@ -76,16 +76,23 @@ h1, h2, h3 { font-family: var(--font-display); letter-spacing: -.045em; line-hei
 .gallery-heading { display: grid; grid-template-columns: 1.35fr .65fr; gap: 60px; align-items: end; margin-bottom: 45px; }
 .gallery-heading h2 span, .model h2 span { color: var(--lime); }
 .gallery-heading > p { max-width: 300px; margin-bottom: 3px; color: #bdcbbd; font-size: 15px; }
-.gallery-main { position: relative; margin: 0; overflow: hidden; background: #25362a; }
-.gallery-main img { width: 100%; aspect-ratio: 16/8.6; object-fit: cover; transition: opacity .18s; }
+.gallery-main { margin: 0; background: #25362a; }
+.gallery-main img { width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; transition: opacity .18s; }
 .gallery-main img.is-changing { opacity: .4; }
-.gallery-main figcaption { position: absolute; inset: auto 0 0; display: flex; justify-content: space-between; gap: 15px; padding: 36px 22px 18px; background: linear-gradient(transparent,rgba(0,0,0,.55)); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.gallery-main figcaption { display: flex; justify-content: space-between; gap: 15px; padding: 14px 2px 3px; color: #c9d8c6; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.gallery-hint { display: none; }
 .gallery-thumbs { display: grid; grid-template-columns: repeat(5,1fr); gap: 10px; margin-top: 11px; }
-.gallery-thumb { position: relative; padding: 0; border: 0; background: #25362a; cursor: pointer; overflow: hidden; }
+.gallery-thumb { position: relative; display: block; min-width: 0; width: 100%; height: auto; aspect-ratio: 5/3; padding: 0; border: 0; background: #25362a; cursor: pointer; overflow: hidden; }
 .gallery-thumb::after { content: ""; position: absolute; inset: 0; border: 3px solid transparent; transition: border-color .2s; }
 .gallery-thumb:hover::after, .gallery-thumb.is-active::after { border-color: var(--lime); }
-.gallery-thumb img { width: 100%; aspect-ratio: 5/3; object-fit: cover; opacity: .7; transition: opacity .2s, transform .3s; }
+.gallery-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: .7; transition: opacity .2s, transform .3s; }
 .gallery-thumb:hover img, .gallery-thumb.is-active img { opacity: 1; transform: scale(1.035); }
+.gallery-dialog { max-width: min(1100px, calc(100vw - 28px)); max-height: calc(100svh - 28px); padding: 16px; border: 1px solid rgba(255,255,255,.25); background: #0b160e; color: #fff; box-shadow: 0 25px 100px rgba(0,0,0,.5); }
+.gallery-dialog::backdrop { background: rgba(5,14,8,.84); }
+.gallery-dialog img { width: auto; max-width: 100%; max-height: calc(100svh - 115px); height: auto; margin: auto; object-fit: contain; }
+.gallery-dialog p { margin: 12px 38px 0 0; color: #c9d8c6; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+.gallery-dialog-close { position: absolute; top: 8px; right: 8px; z-index: 1; display: grid; place-items: center; width: 38px; height: 38px; padding: 0; border: 1px solid rgba(255,255,255,.4); border-radius: 50%; background: rgba(11,22,14,.9); color: #fff; font-size: 26px; line-height: 1; cursor: pointer; }
+.gallery-dialog-close:hover { background: var(--lime); color: var(--forest); }
 
 .opportunity { background: #edf3e8; }
 .opportunity-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 85px; align-items: center; }
@@ -209,10 +216,12 @@ h1, h2, h3 { font-family: var(--font-display); letter-spacing: -.045em; line-hei
   .pillars { gap: 10px; margin-top: 38px; }
   .pillars article { min-height: 0; padding: 22px; }
   .pillars h3 { margin-top: 22px; }
-  .gallery-main img { aspect-ratio: 4/4.4; }
-  .gallery-main figcaption { align-items: flex-end; font-size: 9px; }
-  .gallery-thumbs { gap: 5px; }
-  .gallery-thumb img { aspect-ratio: 1; }
+  .gallery-main figcaption { align-items: flex-start; font-size: 9px; }
+  .gallery-hint { display: block; margin: 18px 0 10px; color: #c9d8c6; font-size: 12px; }
+  .gallery-thumbs { display: flex; align-items: flex-start; gap: 10px; margin-top: 0; padding-bottom: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: var(--lime) transparent; }
+  .gallery-thumb { flex: 0 0 132px; width: 132px; height: 100px; aspect-ratio: auto; scroll-snap-align: start; }
+  .gallery-dialog { padding: 10px; }
+  .gallery-dialog img { max-height: calc(100svh - 100px); }
   .opportunity-flow li { grid-template-columns: 30px 1fr; }
   .opportunity-flow li small { grid-column: 2; margin-top: -5px; }
   .figure-card { min-height: 0; padding: 26px; }
