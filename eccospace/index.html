@@ -3,262 +3,142 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#081724" />
-    <meta name="description" content="Programa técnico de DNS para operaciones NOC, ISP y entornos empresariales. 28 horas, siete módulos y laboratorios prácticos de arquitectura, diagnóstico, monitoreo, seguridad y RCA." />
-    <title>Eccospace | DNS para operaciones NOC e ISP</title>
+    <meta name="theme-color" content="#101c13" />
+    <meta name="description" content="ECCO SPACE diseña y fabrica cápsulas para glamping. Conoce el modelo para transformar terrenos disponibles en experiencias de alojamiento." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ECCO SPACE | Una nueva forma de habitar tu terreno" />
+    <meta property="og:description" content="Cápsulas para glamping: diseño, fabricación y acompañamiento para desarrollar una experiencia de alojamiento." />
+    <meta property="og:image" content="https://www.successo.com.co/assets/eccospace/capsule-forest-night.jpg" />
+    <title>ECCO SPACE | Cápsulas para glamping</title>
     <link rel="canonical" href="https://www.successo.com.co/eccospace" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="preload" as="image" href="/assets/eccospace/capsule-forest-night.jpg" />
     <link rel="stylesheet" href="/eccospace/styles.css" />
-    <link rel="icon" href="/assets/brand/logo-constructora.png" type="image/png" />
+    <link rel="icon" href="/assets/eccospace/logo-dark.png" type="image/png" />
   </head>
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
-    <header class="es-header">
-      <div class="wrap header-inner">
-        <a class="wordmark" href="/eccospace" aria-label="Eccospace, inicio"><span class="wordmark-symbol" aria-hidden="true">✳</span> ECCO<span>SPACE</span></a>
-        <nav class="header-nav" aria-label="Navegación de Eccospace">
-          <a href="#programa">El programa</a>
-          <a href="#temario">Temario</a>
-          <a href="#metodologia">Metodología</a>
-          <a href="#laboratorio">Laboratorio</a>
+
+    <header class="site-header" id="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#inicio" aria-label="ECCO SPACE, ir al inicio"><span class="brand-art" aria-hidden="true"></span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú"><span></span><span></span></button>
+        <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+          <a href="#concepto">El concepto</a>
+          <a href="#capsulas">Las cápsulas</a>
+          <a href="#modelo">El modelo</a>
+          <a href="#preguntas">Preguntas</a>
+          <a class="nav-cta" href="#contacto">Hablemos <span aria-hidden="true">↗</span></a>
         </nav>
-        <a class="back-link" href="/">Volver a Successo <span aria-hidden="true">↗</span></a>
       </div>
     </header>
 
     <main id="contenido">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-grid" aria-hidden="true"></div>
-        <div class="wrap hero-layout">
-          <div class="hero-copy">
-            <p class="eyebrow"><span class="eyebrow-line"></span> FORMACIÓN TÉCNICA · OPERACIONES DE RED</p>
-            <h1 id="hero-title">El DNS sostiene la red.<br /><em>Aprenda a sostenerlo.</em></h1>
-            <p class="hero-lead">Un programa de 28 horas para diseñar, operar y proteger servicios DNS en ambientes empresariales y de operadores ISP. Del primer registro a la causa raíz de un incidente.</p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="#temario">Explorar el temario <span aria-hidden="true">↗</span></a>
-              <a class="button button-outline" href="/assets/docs/eccospace-dns-noc-isp.docx" download>Descargar programa <span aria-hidden="true">↓</span></a>
-            </div>
-            <p class="hero-note">Dirigido a ingenieros NOC, administradores DNS y equipos de soporte de redes.</p>
-          </div>
-          <div class="hero-visual" aria-hidden="true">
-            <div class="visual-top"><span>TOPOLOGÍA DE LABORATORIO</span><span class="live-dot">ENTORNO ACTIVO</span></div>
-            <svg class="network-lines" viewBox="0 0 520 460" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><path d="M260 94 104 210 260 316 416 210 260 94ZM260 94v222M104 210h312" /><path d="M104 210 89 342m327-132 15 132M260 316v65" /></svg>
-            <div class="network-node node-client"><small>01 / CLIENTE</small><strong>Consulta</strong><span>dig +trace</span></div>
-            <div class="network-node node-resolver"><small>02 / RESOLVER</small><strong>Unbound</strong><span>Recursión + caché</span></div>
-            <div class="network-node node-primary"><small>03 / AUTORIDAD</small><strong>BIND 9</strong><span>Primario</span></div>
-            <div class="network-node node-secondary"><small>04 / RÉPLICA</small><strong>Secundario</strong><span>AXFR / IXFR</span></div>
-            <div class="network-caption"><span class="caption-pulse"></span> Arquitectura real. Fallas reales. Evidencia técnica.</div>
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <img class="hero-image" src="/assets/eccospace/capsule-forest-night.jpg" width="1448" height="1086" alt="Concepto de cápsula ECCO SPACE iluminada en un entorno natural" fetchpriority="high" />
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="container hero-content">
+          <p class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> CÁPSULAS PARA GLAMPING</p>
+          <h1 id="hero-title">Tu terreno puede ser el comienzo de algo <em>extraordinario.</em></h1>
+          <p class="hero-intro">Diseño, fabricación y acompañamiento para convertir un espacio disponible en una experiencia de alojamiento.</p>
+          <div class="hero-actions">
+            <a class="button button-lime" href="#concepto">Descubre ECCO SPACE <span aria-hidden="true">↗</span></a>
+            <a class="button button-glass" href="#capsulas">Explora las cápsulas <span aria-hidden="true">↓</span></a>
           </div>
         </div>
+        <div class="container hero-footer" aria-hidden="true"><span>DISEÑO PARA NUEVAS POSIBILIDADES</span><span>DESLIZA PARA EXPLORAR ↓</span></div>
       </section>
 
-      <section class="stats-strip" aria-label="Datos del curso">
-        <div class="wrap stats-grid">
-          <div><strong>28<span>h</span></strong><p>Duración total</p></div>
-          <div><strong>70,5<span>%</span></strong><p>Aprendizaje práctico</p></div>
-          <div><strong>07</strong><p>Módulos progresivos</p></div>
-          <div><strong>01</strong><p>Laboratorio integrador final</p></div>
+      <section class="intro section" id="concepto" aria-labelledby="concepto-title">
+        <div class="container intro-grid">
+          <div class="intro-heading">
+            <p class="eyebrow">01 / EL CONCEPTO</p>
+            <h2 id="concepto-title">Espacios pensados para <span>vivir diferente.</span></h2>
+          </div>
+          <div class="intro-body">
+            <p class="intro-lead">ECCO SPACE diseña y fabrica cápsulas glamping innovadoras y funcionales para instalar en distintos tipos de terrenos.</p>
+            <p>Combinamos diseño, tecnología y materiales de calidad para crear espacios adaptables. Nuestra propuesta contempla unidades de descanso y alojamiento que pueden integrarse a un proyecto turístico, según las condiciones de cada ubicación.</p>
+            <a class="inline-link" href="#modelo">Conoce cómo funciona el modelo <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
-      </section>
-
-      <section id="programa" class="section section-light">
-        <div class="wrap intro-grid">
-          <div><p class="section-kicker">01 / EL PROGRAMA</p><h2>De la arquitectura al incidente resuelto.</h2></div>
-          <div class="intro-copy"><p>El curso desarrolla competencias de arquitectura, configuración, operación, monitoreo, diagnóstico y ciberseguridad DNS mediante una topología virtual y escenarios de incidentes.</p><p>Al finalizar, el participante podrá administrar zonas y delegaciones, diagnosticar fallas de resolución, implementar monitoreo proactivo, aplicar controles de seguridad y elaborar análisis de causa raíz con evidencias técnicas.</p></div>
-        </div>
-        <div class="wrap outcomes-grid" aria-label="Competencias principales">
-          <article><span class="outcome-number">01</span><h3>Diseñar y configurar</h3><p>Arquitecturas DNS empresariales e ISP, zonas, delegaciones y registros.</p></article>
-          <article><span class="outcome-number">02</span><h3>Diagnosticar y monitorear</h3><p>Fallas de resolución, métricas, alertas y comportamiento del servicio.</p></article>
-          <article><span class="outcome-number">03</span><h3>Proteger y recuperar</h3><p>Controles DNS, gestión de incidentes y RCA respaldado por evidencia.</p></article>
-        </div>
-        <div class="wrap audience-row">
-          <div><span>PERFIL DE AUDIENCIA</span><p>Ingenieros de gestión y configuración, personal NOC, administradores de redes/DNS y equipos de soporte de segundo o tercer nivel.</p></div>
-          <div><span>PRERREQUISITOS</span><p>Conocimientos de TCP/IP, IPv4/IPv6, operación básica de redes y línea de comandos Linux. No se requiere experiencia previa con BIND o Unbound.</p></div>
+        <div class="container pillars" aria-label="Nuestra propuesta">
+          <article><span class="pillar-icon" aria-hidden="true">01</span><h3>Diseño</h3><p>Una unidad concebida para ofrecer una experiencia de alojamiento diferente, con confort y privacidad.</p></article>
+          <article><span class="pillar-icon" aria-hidden="true">02</span><h3>Fabricación</h3><p>Producción de la cápsula de acuerdo con las características y especificaciones previamente acordadas.</p></article>
+          <article><span class="pillar-icon" aria-hidden="true">03</span><h3>Acompañamiento</h3><p>Orientación inicial para estructurar su funcionamiento como alojamiento tipo glamping.</p></article>
         </div>
       </section>
 
-      <section id="temario" class="section section-syllabus">
-        <div class="wrap syllabus-layout">
-          <div class="syllabus-intro"><p class="section-kicker">02 / TEMARIO</p><h2>Siete módulos.<br />Una capacidad operativa completa.</h2><p>El itinerario avanza desde los fundamentos de la resolución de nombres hasta la recuperación de incidentes complejos en entornos empresariales e ISP.</p><a class="text-link" href="/assets/docs/eccospace-dns-noc-isp.docx" download>Descargar documento completo <span aria-hidden="true">↗</span></a></div>
-          <div class="module-list">
-            <details class="module">
-<summary><span class="module-number">01</span><span class="module-title">Fundamentos y arquitectura DNS en ambientes empresariales y de operadores ISP</span><span class="module-duration">3 h 30 min</span><span class="module-plus" aria-hidden="true">+</span></summary>
-<div class="module-body">
-<ul>
-<li>Funci&#243;n del DNS dentro de la infraestructura IP y dependencia de aplicaciones, correo, navegaci&#243;n y servicios de red.</li>
-<li>Estructura jer&#225;rquica: espacio de nombres, dominios, zonas, servidores ra&#237;z, TLD y servidores autoritativos.</li>
-<li>Componentes del servicio: stub resolver, resolver recursivo/cach&#233;, forwarder, servidor autoritativo primario y secundario.</li>
-<li>Resoluci&#243;n recursiva e iterativa; delegaci&#243;n de zonas, glue records, cach&#233; y TTL.</li>
-<li>Arquitecturas empresariales e ISP: separaci&#243;n de roles, DNS interno/externo, redundancia, alta disponibilidad, escalabilidad y concepto de Anycast.</li>
-<li>Transporte DNS sobre UDP/TCP 53, EDNS(0) y consideraciones b&#225;sicas para IPv4/IPv6.</li>
-</ul>
-<h3>Pr&#225;ctica de laboratorio: Construcci&#243;n de una mini-arquitectura DNS Enterprise/ISP (2 h 15 min)</h3>
-<ul>
-<li>Desplegar en m&#225;quinas virtuales o contenedores un cliente, un resolver recursivo Unbound y servidores BIND autoritativos primario/secundario.</li>
-<li>Crear una jerarqu&#237;a DNS privada con zona padre e hija para observar delegaci&#243;n y autoridad.</li>
-<li>Ejecutar consultas recursivas e iterativas con dig y dig +trace.</li>
-<li>Capturar tr&#225;fico con tcpdump/Wireshark e identificar consultas, respuestas, puertos, servidores consultados y tiempos de resoluci&#243;n.</li>
-</ul>
-<p class="module-note">Laboratorio realizable con Linux y software open source; no requiere appliances DNS ni hardware de red especializado.</p>
-</div></details>
-<details class="module">
-<summary><span class="module-number">02</span><span class="module-title">Tipos de registros DNS, su funcionalidad, impacto operativo y proceso de resoluci&#243;n de nombres</span><span class="module-duration">4 h</span><span class="module-plus" aria-hidden="true">+</span></summary>
-<div class="module-body">
-<p class="distribution">Distribuci&#243;n: Teor&#237;a 1 h 15 min | Pr&#225;ctica 2 h 45 min</p>
-<ul>
-<li>Estructura de archivos de zona y par&#225;metros operativos del registro SOA.</li>
-<li>Registros A, AAAA, CNAME, MX, NS, PTR, TXT, SRV y CAA: uso, dependencias e impacto de una configuraci&#243;n incorrecta.</li>
-<li>Zonas directas e inversas, delegaciones, subdominios y registros glue.</li>
-<li>TTL, cach&#233; positiva y negativa, propagaci&#243;n de cambios y efectos sobre la recuperaci&#243;n de incidentes.</li>
-<li>Transferencias de zona AXFR/IXFR, sincronizaci&#243;n primario/secundario y control del serial.</li>
-<li>Proceso completo de resoluci&#243;n de nombres desde el cliente hasta la respuesta autoritativa.</li>
-</ul>
-<h3>Pr&#225;ctica de laboratorio: Administraci&#243;n de zonas, registros y comportamiento de cach&#233; (2 h 45 min)</h3>
-<ul>
-<li>Crear zonas forward y reverse en BIND y configurar registros A/AAAA, CNAME, MX, NS, PTR, TXT, SRV y CAA.</li>
-<li>Configurar servidor secundario y validar transferencias AXFR/IXFR y seriales SOA.</li>
-<li>Implementar una delegaci&#243;n de subdominio y validar glue records.</li>
-<li>Modificar TTL y observar cach&#233;, expiraci&#243;n y propagaci&#243;n mediante dig, rndc y consultas repetidas.</li>
-<li>Analizar con Wireshark la secuencia de resoluci&#243;n y documentar el efecto operativo de cambios de registros.</li>
-</ul>
-</div></details>
-<details class="module">
-<summary><span class="module-number">03</span><span class="module-title">Diagn&#243;stico y soluci&#243;n de incidentes DNS, incluyendo fallas recurrentes en entornos NOC</span><span class="module-duration">4 h 30 min</span><span class="module-plus" aria-hidden="true">+</span></summary>
-<div class="module-body">
-<p class="distribution">Distribuci&#243;n: Teor&#237;a 1 h | Pr&#225;ctica 3 h 30 min</p>
-<ul>
-<li>Metodolog&#237;a de troubleshooting orientada al NOC: alcance, s&#237;ntomas, punto de falla, hip&#243;tesis, evidencia, correcci&#243;n y validaci&#243;n.</li>
-<li>Interpretaci&#243;n de c&#243;digos y respuestas DNS: NOERROR, NXDOMAIN, SERVFAIL, REFUSED, timeout y respuestas incompletas.</li>
-<li>Fallas frecuentes: registros incorrectos, cach&#233; desactualizada, delegaci&#243;n/glue defectuosos, secundario desincronizado, serial incorrecto, transferencias bloqueadas y resoluci&#243;n intermitente.</li>
-<li>Diagn&#243;stico de conectividad y transporte: UDP/TCP 53, fragmentaci&#243;n/EDNS(0), latencia y reachability hacia servidores autoritativos.</li>
-<li>Herramientas de operaci&#243;n: dig, host, nslookup, delv, rndc, journalctl, logs de BIND/Unbound, tcpdump y Wireshark.</li>
-<li>Criterios de escalamiento, recolecci&#243;n de evidencias y documentaci&#243;n t&#233;cnica para incidentes DNS.</li>
-</ul>
-<h3>Pr&#225;ctica de laboratorio: Challenge NOC: diagn&#243;stico de m&#250;ltiples fallas DNS (3 h 30 min)</h3>
-<ul>
-<li>Recibir una topolog&#237;a con fallas sembradas y un conjunto de s&#237;ntomas reportados por usuarios/monitoreo.</li>
-<li>Localizar y corregir incidentes como NXDOMAIN inesperado, SERVFAIL, timeout, delegaci&#243;n err&#243;nea, secundario desactualizado y transferencia de zona fallida.</li>
-<li>Correlacionar consultas dig, logs y captura de paquetes para determinar la causa t&#233;cnica.</li>
-<li>Restaurar el servicio, validar la resoluci&#243;n desde diferentes clientes y registrar evidencias para escalamiento o cierre.</li>
-</ul>
-</div></details>
-<details class="module">
-<summary><span class="module-number">04</span><span class="module-title">Herramientas y pr&#225;cticas de monitoreo DNS para la gesti&#243;n proactiva de la infraestructura</span><span class="module-duration">3 h 30 min</span><span class="module-plus" aria-hidden="true">+</span></summary>
-<div class="module-body">
-<p class="distribution">Distribuci&#243;n: Teor&#237;a 45 min | Pr&#225;ctica 2 h 45 min</p>
-<ul>
-<li>Objetivos de monitoreo: disponibilidad, latencia, tasa de errores, estado de resoluci&#243;n, capacidad y comportamiento de cach&#233;.</li>
-<li>Monitoreo desde la perspectiva del servicio: consultas sint&#233;ticas, pruebas desde distintos puntos y validaci&#243;n de respuestas esperadas.</li>
-<li>Estad&#237;sticas y logging de BIND/Unbound; establecimiento de l&#237;nea base y umbrales operativos.</li>
-<li>Prometheus, Blackbox Exporter y Grafana como stack open source para m&#233;tricas, probes DNS, dashboards y alertamiento.</li>
-<li>Buenas pr&#225;cticas para reducir falsos positivos, diferenciar falla local/remota y soportar operaci&#243;n proactiva del NOC.</li>
-</ul>
-<h3>Pr&#225;ctica de laboratorio: Monitoreo proactivo y tablero operativo DNS (2 h 45 min)</h3>
-<ul>
-<li>Habilitar estad&#237;sticas/logging del servicio DNS y recolectar m&#233;tricas relevantes.</li>
-<li>Configurar probes DNS con Prometheus/Blackbox Exporter para validar disponibilidad y tiempo de respuesta.</li>
-<li>Construir un dashboard en Grafana con indicadores operativos del servicio.</li>
-<li>Definir umbrales y generar alertas controladas ante ca&#237;da del servicio, aumento de latencia y respuestas inesperadas.</li>
-<li>Correlacionar una alerta con logs y pruebas activas para determinar el componente afectado.</li>
-</ul>
-</div></details>
-<details class="module">
-<summary><span class="module-number">05</span><span class="module-title">DNS y ciberseguridad: riesgos, vulnerabilidades y mecanismos de protecci&#243;n</span><span class="module-duration">4 h</span><span class="module-plus" aria-hidden="true">+</span></summary>
-<div class="module-body">
-<p class="distribution">Distribuci&#243;n: Teor&#237;a 1 h 15 min | Pr&#225;ctica 2 h 45 min</p>
-<ul>
-<li>Superficie de ataque del DNS y consecuencias de disponibilidad, integridad y confidencialidad.</li>
-<li>Riesgos: spoofing/cache poisoning, abuso de recursi&#243;n abierta, amplification/reflection, DDoS, transferencias de zona no autorizadas, DNS tunneling y manipulaci&#243;n de registros.</li>
-<li>Separaci&#243;n de servicios recursivos y autoritativos, ACL, principio de m&#237;nimo privilegio y restricciones de recursion/transferencia.</li>
-<li>TSIG para autenticaci&#243;n de transferencias y actualizaciones; Response Rate Limiting (RRL) como control frente a abuso.</li>
-<li>DNSSEC: cadena de confianza, DNSKEY, DS y RRSIG; firma, validaci&#243;n y efectos operativos de una cadena rota.</li>
-<li>Visibilidad de DNS cifrado (DoT/DoH) y consideraciones para monitoreo y pol&#237;ticas de seguridad del NOC.</li>
-</ul>
-<h3>Pr&#225;ctica de laboratorio: Hardening, TSIG y DNSSEC en un entorno controlado (2 h 45 min)</h3>
-<ul>
-<li>Restringir recursion y transferencias de zona mediante ACL y validar intentos permitidos/denegados.</li>
-<li>Proteger la transferencia primario-secundario con TSIG.</li>
-<li>Firmar una zona con DNSSEC y validar respuestas con dig/delv.</li>
-<li>Introducir una falla controlada de validaci&#243;n DNSSEC, identificar el SERVFAIL resultante y restaurar la cadena de confianza.</li>
-<li>Aplicar par&#225;metros de hardening y RRL en la maqueta sin generar tr&#225;fico ofensivo hacia redes externas.</li>
-</ul>
-<p class="module-note">Todas las pruebas de seguridad se ejecutan en una red virtual aislada y controlada.</p>
-</div></details>
-<details class="module">
-<summary><span class="module-number">06</span><span class="module-title">Gesti&#243;n de incidentes y an&#225;lisis de causa ra&#237;z (RCA) asociados a servicios DNS</span><span class="module-duration">3 h 30 min</span><span class="module-plus" aria-hidden="true">+</span></summary>
-<div class="module-body">
-<p class="distribution">Distribuci&#243;n: Teor&#237;a 1 h | Pr&#225;ctica 2 h 30 min</p>
-<ul>
-<li>Ciclo de gesti&#243;n del incidente: detecci&#243;n, clasificaci&#243;n, priorizaci&#243;n, diagn&#243;stico, contenci&#243;n, recuperaci&#243;n, validaci&#243;n y cierre.</li>
-<li>Construcci&#243;n de l&#237;nea de tiempo y preservaci&#243;n de evidencias: logs, m&#233;tricas, capturas, cambios y resultados de pruebas.</li>
-<li>Diferencia entre s&#237;ntoma, causa inmediata y causa ra&#237;z; t&#233;cnicas de 5 porqu&#233;s y &#225;rbol causal aplicadas a DNS.</li>
-<li>Definici&#243;n de acciones correctivas y preventivas, responsables, criterios de verificaci&#243;n y seguimiento.</li>
-<li>Estructura de un informe RCA/post-incidente y actualizaci&#243;n de runbooks para reducir recurrencia y MTTR.</li>
-</ul>
-<h3>Pr&#225;ctica de laboratorio: RCA de un incidente DNS con evidencia t&#233;cnica (2 h 30 min)</h3>
-<ul>
-<li>Recibir un incidente con alertas, logs, capturas y cambios recientes.</li>
-<li>Restablecer el servicio y reconstruir la secuencia temporal de eventos.</li>
-<li>Identificar causa inmediata, causa ra&#237;z y factores contribuyentes.</li>
-<li>Elaborar un RCA con impacto, evidencia, correcci&#243;n aplicada, acciones preventivas y controles de verificaci&#243;n.</li>
-<li>Convertir las conclusiones en un runbook operativo reutilizable por el NOC.</li>
-</ul>
-</div></details>
-<details class="module">
-<summary><span class="module-number">07</span><span class="module-title">Casos pr&#225;cticos y escenarios reales de ISP, operadores y entornos empresariales</span><span class="module-duration">5 h</span><span class="module-plus" aria-hidden="true">+</span></summary>
-<div class="module-body">
-<p class="distribution">Distribuci&#243;n: Teor&#237;a 1 h 45 min | Pr&#225;ctica 3 h 15 min</p>
-<ul>
-<li>Patrones operativos de alta disponibilidad y continuidad: primario/secundario, resiliencia del resolver, redundancia y validaci&#243;n posterior a cambios.</li>
-<li>Escenarios empresariales: DNS interno/externo, split DNS, forwarders, dependencias con servicios corporativos y cambios de registros.</li>
-<li>Escenarios ISP/operador: delegaciones, servidores autoritativos, cach&#233; recursiva, degradaci&#243;n parcial, picos de consultas y fallas entre dominios administrativos.</li>
-<li>An&#225;lisis de incidentes complejos con m&#250;ltiples s&#237;ntomas y m&#225;s de una causa contribuyente.</li>
-<li>Buenas pr&#225;cticas de operaci&#243;n: ventanas de cambio, rollback, monitoreo posterior, escalamiento, comunicaci&#243;n y actualizaci&#243;n de conocimiento del NOC.</li>
-</ul>
-<h3>Pr&#225;ctica de laboratorio: Capstone NOC/ISP: operaci&#243;n, recuperaci&#243;n y RCA (3 h 15 min)</h3>
-<ul>
-<li>Escenario A - Enterprise: falla de resoluci&#243;n asociada a DNS interno/forwarding y cambio reciente; restauraci&#243;n y validaci&#243;n de dependencias.</li>
-<li>Escenario B - ISP autoritativo: delegaci&#243;n inconsistente y secundario desactualizado; correcci&#243;n, sincronizaci&#243;n y verificaci&#243;n desde distintos puntos de consulta.</li>
-<li>Escenario C - Seguridad/observabilidad: SERVFAIL por DNSSEC combinado con incremento an&#243;malo de consultas; uso de dashboard, logs y herramientas DNS para aislar causas.</li>
-<li>Entregar evidencia de diagn&#243;stico, acciones ejecutadas, validaci&#243;n del servicio, RCA y plan preventivo para cada escenario.</li>
-</ul>
-<p class="module-note">Los escenarios se construyen a partir de patrones de falla habituales en operaci&#243;n DNS y se ejecutan &#237;ntegramente en laboratorio virtual.</p>
-</div></details>
-
+      <section class="gallery-section section" id="capsulas" aria-labelledby="capsulas-title">
+        <div class="container gallery-heading">
+          <div><p class="eyebrow eyebrow-light">02 / LAS CÁPSULAS</p><h2 id="capsulas-title">Un espacio propio.<br /><span>Un entorno sin límites.</span></h2></div>
+          <p>Imagina una unidad de alojamiento integrada a la naturaleza. Explora las imágenes de referencia del concepto ECCO SPACE.</p>
+        </div>
+        <div class="container gallery-shell">
+          <figure class="gallery-main">
+            <img id="gallery-image" src="/assets/eccospace/capsule-mountain-deck.jpg" width="1280" height="853" alt="Cápsula glamping ECCO SPACE en una terraza con vista a las montañas" loading="lazy" />
+            <figcaption><span id="gallery-counter">01 / 05</span><span>Imágenes de referencia del concepto</span></figcaption>
+          </figure>
+          <div class="gallery-thumbs" role="group" aria-label="Seleccionar imagen de cápsulas">
+            <button type="button" class="gallery-thumb is-active" aria-pressed="true" data-src="/assets/eccospace/capsule-mountain-deck.jpg" data-alt="Cápsula glamping ECCO SPACE en una terraza con vista a las montañas" data-number="01"><img src="/assets/eccospace/capsule-mountain-deck.jpg" alt="Vista de montaña" width="1280" height="853" loading="lazy" /></button>
+            <button type="button" class="gallery-thumb" aria-pressed="false" data-src="/assets/eccospace/capsules-valley.jpg" data-alt="Tres cápsulas glamping en un valle montañoso" data-number="02"><img src="/assets/eccospace/capsules-valley.jpg" alt="Cápsulas en el valle" width="1280" height="853" loading="lazy" /></button>
+            <button type="button" class="gallery-thumb" aria-pressed="false" data-src="/assets/eccospace/capsules-forest-camp.jpg" data-alt="Conjunto de cápsulas glamping entre árboles al anochecer" data-number="03"><img src="/assets/eccospace/capsules-forest-camp.jpg" alt="Cápsulas en el bosque" width="1280" height="853" loading="lazy" /></button>
+            <button type="button" class="gallery-thumb" aria-pressed="false" data-src="/assets/eccospace/capsule-forest-day.jpg" data-alt="Vista diurna de una cápsula ECCO SPACE entre vegetación" data-number="04"><img src="/assets/eccospace/capsule-forest-day.jpg" alt="Cápsula de día" width="1448" height="1086" loading="lazy" /></button>
+            <button type="button" class="gallery-thumb" aria-pressed="false" data-src="/assets/eccospace/capsule-forest-night.jpg" data-alt="Cápsula ECCO SPACE iluminada entre árboles por la noche" data-number="05"><img src="/assets/eccospace/capsule-forest-night.jpg" alt="Cápsula de noche" width="1448" height="1086" loading="lazy" /></button>
           </div>
         </div>
       </section>
 
-      <section id="metodologia" class="section section-light methodology-section">
-        <div class="wrap"><p class="section-kicker">03 / METODOLOGÍA</p><h2>Aprender haciendo.<br /><span>Operar con criterio.</span></h2>
-          <div class="method-grid">
-            <div class="method-feature"><span class="method-index">70,5% <small>PRÁCTICA</small></span><p>19 h 45 min en laboratorios progresivos, troubleshooting guiado, retos de incidentes y un caso integrador final.</p></div>
-            <div class="method-feature"><span class="method-index">29,5% <small>TEORÍA</small></span><p>8 h 15 min de fundamentos presentados en función de decisiones y problemas operativos de la maqueta.</p></div>
-            <div class="method-feature"><span class="method-index">1–2 <small>PARTICIPANTES</small></span><p>Prácticas individuales o en parejas, con snapshots para restaurar estados y repetir los escenarios.</p></div>
+      <section class="opportunity section" aria-labelledby="oportunidad-title">
+        <div class="container opportunity-grid">
+          <div class="opportunity-image"><img src="/assets/eccospace/capsules-valley.jpg" width="1280" height="853" alt="Concepto de varias cápsulas en un paisaje natural colombiano" loading="lazy" /><span class="image-caption">UNA UNIDAD PUEDE SER EL COMIENZO</span></div>
+          <div class="opportunity-copy"><p class="eyebrow">03 / LA OPORTUNIDAD</p><h2 id="oportunidad-title">Del terreno disponible a una nueva experiencia.</h2><p>La propuesta consiste en transformar un espacio con potencial en una unidad de alojamiento turístico. Puedes empezar con una cápsula y desarrollar el proyecto según las condiciones de tu terreno y del mercado.</p>
+            <ol class="opportunity-flow"><li><span>01</span><strong>Terreno</strong><small>Un espacio disponible</small></li><li><span>02</span><strong>Unidad</strong><small>Diseño ECCO SPACE</small></li><li><span>03</span><strong>Alojamiento</strong><small>Experiencia turística</small></li></ol>
+            <p class="opportunity-note">Su instalación y operación dependen de la viabilidad técnica, legal y comercial de cada ubicación.</p>
           </div>
-          <p class="method-footnote">Las pruebas de seguridad se mantienen aisladas en la red virtual del laboratorio.</p>
         </div>
       </section>
 
-      <section id="laboratorio" class="section section-lab">
-        <div class="wrap lab-grid">
-          <div><p class="section-kicker">04 / ENTORNO DE LABORATORIO</p><h2>Todo lo necesario para llevar la teoría a la red.</h2><p class="lab-lead">La maqueta se ejecuta con Linux y herramientas open source. No requiere appliances DNS, hardware especializado ni licencias de pago.</p></div>
-          <div class="lab-panel">
-            <div><span>01 / EQUIPO RECOMENDADO</span><p>CPU de 4 núcleos, 16 GB de RAM y 40 GB de espacio libre por participante o pareja.</p></div>
-            <div><span>02 / TOPOLOGÍA</span><p>4 a 5 máquinas virtuales ligeras o contenedores: cliente, resolver recursivo, dos servidores autoritativos y nodo de monitoreo.</p></div>
-            <div><span>03 / PLATAFORMA</span><p>Ubuntu Server LTS o Debian estable; VirtualBox, QEMU/KVM o equivalente. Docker/Podman para servicios compatibles.</p></div>
-            <div><span>04 / HERRAMIENTAS</span><p>BIND 9, Unbound, dnsutils, Wireshark/tcpdump, Prometheus, Blackbox Exporter y Grafana.</p></div>
-          </div>
+      <section class="figures section" id="cifras" aria-labelledby="cifras-title">
+        <div class="container figures-heading"><div><p class="eyebrow">04 / REFERENCIAS ECONÓMICAS</p><h2 id="cifras-title">Las cifras del modelo, <span>con contexto.</span></h2></div><p>El material suministrado presenta una referencia de renta mensual y, por separado, una proyección de ingresos para el propietario. Son conceptos diferentes y sus resultados dependen de la operación real.</p></div>
+        <div class="container figures-grid">
+          <article class="figure-card figure-card-dark"><span class="figure-label">RENTA MENSUAL DE REFERENCIA · PRESENTACIÓN</span><strong>Hasta $2.900.000 <small>COP / MES</small></strong><p>La presentación comercial contempla esta renta por unidad, sujeta a ubicación, demanda, ocupación y modelo implementado.</p><div class="figure-promo"><span>PROMOCIÓN INDICADA EN LA PRESENTACIÓN</span><p>$1.450.000 COP mensuales para las primeras cinco cápsulas rentadas cada mes (50% de descuento). Vigencia y disponibilidad por confirmar.</p></div></article>
+          <article class="figure-card figure-card-light"><span class="figure-label">PROYECCIÓN DE INGRESOS · DOCUMENTO OPERATIVO</span><strong>Hasta $1.500.000 <small>COP / MES</small></strong><p>Proyección de ingreso mensual por unidad para el propietario, condicionada a ubicación, demanda, ocupación y condiciones de operación.</p><span class="figure-source">Cifras tomadas del material proporcionado por ECCO SPACE.</span></article>
         </div>
-        <div class="wrap lab-note">Las versiones específicas pueden variar. Se emplearán versiones estables equivalentes que mantengan los objetivos y actividades del temario.</div>
+        <p class="container figures-disclaimer">Estas referencias no constituyen una garantía de rentabilidad. Las condiciones comerciales, el alcance de la promoción y las obligaciones de cada parte deben confirmarse en el acuerdo correspondiente.</p>
       </section>
 
-      <section class="closing-section"><div class="wrap closing-inner"><div><p class="section-kicker">SIGUIENTE PASO</p><h2>Explore el programa<br />en detalle.</h2><p>Consulte el temario original para revisar cada actividad y requisito técnico.</p></div><a class="button button-primary" href="/assets/docs/eccospace-dns-noc-isp.docx" download>Descargar programa <span aria-hidden="true">↓</span></a></div></section>
+      <section class="model section" id="modelo" aria-labelledby="modelo-title">
+        <div class="container model-header"><div><p class="eyebrow eyebrow-light">05 / EL MODELO</p><h2 id="modelo-title">De la idea a la operación,<br /><span>paso a paso.</span></h2></div><p>El inversionista adquiere su propia unidad. ECCO SPACE la fabrica y brinda orientación inicial para integrarla a un modelo de alojamiento tipo glamping.</p></div>
+        <div class="container steps">
+          <article><span>01</span><h3>Adquisición</h3><p>Se acuerdan las condiciones comerciales y las características de la cápsula.</p></article>
+          <article><span>02</span><h3>Fabricación</h3><p>Se fabrica la unidad según las especificaciones pactadas. El plazo estimado es de hasta tres meses, sujeto a las condiciones del proyecto.</p></article>
+          <article><span>03</span><h3>Selección del terreno</h3><p>El propietario elige dónde instalarla, siempre que el lugar cumpla los requisitos técnicos, legales y operativos.</p></article>
+          <article><span>04</span><h3>Traslado e instalación</h3><p>La unidad se lleva al terreno seleccionado. Los costos de transporte e instalación corresponden al propietario, salvo acuerdo diferente.</p></article>
+          <article><span>05</span><h3>Estructuración</h3><p>Brindamos orientación para definir el funcionamiento inicial de la unidad como alojamiento turístico.</p></article>
+          <article><span>06</span><h3>Operación</h3><p>La unidad puede explotarse comercialmente según el modelo acordado y las condiciones reales del mercado.</p></article>
+        </div>
+      </section>
+
+      <section class="clarity section" aria-labelledby="claridad-title">
+        <div class="container clarity-grid"><div><p class="eyebrow">06 / ANTES DE EMPEZAR</p><h2 id="claridad-title">Un proyecto claro desde el primer paso.</h2><p>La inversión se formaliza mediante un contrato que define especificaciones, entrega, garantías, pagos, responsabilidades y condiciones de uso de la unidad.</p></div>
+          <div class="clarity-list"><div><span>01 / PROPIEDAD</span><p>La cápsula se fabrica para el inversionista conforme a lo establecido en el contrato.</p></div><div><span>02 / UBICACIÓN</span><p>La instalación requiere revisar las condiciones del terreno y los permisos aplicables.</p></div><div><span>03 / TRANSPORTE</span><p>Los costos de traslado e instalación son del propietario, salvo pacto contractual distinto.</p></div><div><span>04 / OPERACIÓN</span><p>El modelo contempla un plazo contractual mínimo de seis meses, sujeto a lo acordado entre las partes. Los ingresos dependen de ubicación, demanda, ocupación y gestión comercial.</p></div></div>
+        </div>
+      </section>
+
+      <section class="faq section" id="preguntas" aria-labelledby="preguntas-title"><div class="container faq-grid"><div><p class="eyebrow">07 / PREGUNTAS FRECUENTES</p><h2 id="preguntas-title">Lo esencial, sin rodeos.</h2></div><div class="faq-list">
+        <details><summary>¿Debo tener un terreno antes de adquirir la unidad?<span aria-hidden="true">+</span></summary><p>El modelo permite elegir dónde instalarla. La ubicación debe cumplir las condiciones técnicas, legales y operativas para su instalación y funcionamiento.</p></details>
+        <details><summary>¿Cuánto tarda la fabricación?<span aria-hidden="true">+</span></summary><p>El plazo estimado es de hasta tres meses, sujeto a disponibilidad de materiales, especificaciones y condiciones del proyecto.</p></details>
+        <details><summary>¿Quién asume el transporte y la instalación?<span aria-hidden="true">+</span></summary><p>El propietario asume esos costos, a menos que el contrato establezca una condición diferente.</p></details>
+        <details><summary>¿Los ingresos están garantizados?<span aria-hidden="true">+</span></summary><p>No. El desempeño comercial depende, entre otros factores, de la ubicación, la demanda, la ocupación y el modelo de operación implementado.</p></details>
+      </div></div></section>
+
+      <section class="contact" id="contacto" aria-labelledby="contacto-title"><img src="/assets/eccospace/capsules-forest-camp.jpg" width="1280" height="853" alt="Concepto de cápsulas glamping en un bosque al anochecer" loading="lazy" /><div class="contact-shade" aria-hidden="true"></div><div class="container contact-content"><p class="eyebrow eyebrow-light">TU PRÓXIMO PROYECTO</p><h2 id="contacto-title">¿Y si tu próxima gran idea ya está en el terreno que tienes?</h2><p>Conversemos sobre la cápsula, tu ubicación y las posibilidades de tu proyecto.</p><a class="button button-lime" href="https://www.instagram.com/ecco.space/" target="_blank" rel="noopener noreferrer">Escríbenos en Instagram <span aria-hidden="true">↗</span></a></div></section>
     </main>
 
-    <footer class="es-footer"><div class="wrap footer-inner"><span class="footer-brand">ECCO<span>SPACE</span></span><span>Programa técnico de DNS para NOC e ISP</span><a href="/">Volver a Successo ↗</a></div></footer>
+    <footer class="footer"><div class="container footer-top"><div><a class="brand footer-brand" href="#inicio" aria-label="ECCO SPACE, volver al inicio"><span class="brand-art" aria-hidden="true"></span></a><p>Diseño y fabricación de cápsulas para nuevas experiencias de alojamiento.</p></div><div class="footer-links"><a href="#concepto">El concepto</a><a href="#capsulas">Las cápsulas</a><a href="#modelo">El modelo</a><a href="/">Volver a Successo ↗</a></div><div class="footer-social"><span>SÍGUENOS</span><a href="https://www.instagram.com/ecco.space/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.tiktok.com/@ecco.space" target="_blank" rel="noopener noreferrer">TikTok ↗</a></div></div><div class="container footer-bottom"><span>© <span id="year"></span> ECCO SPACE</span><span>Imágenes de referencia. Condiciones sujetas a acuerdo contractual.</span></div></footer>
+
     <script src="/eccospace/main.js" defer></script>
   </body>
 </html>
